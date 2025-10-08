@@ -26,8 +26,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }} # g0t4
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: docker tag upper ghcr.io/g0t4/upper:latest
-      - run: docker tag upper ghcr.io/g0t4/upper:${{ github.ref_name }}
-      - run: docker push ghcr.io/g0t4/upper:latest
-      - run: docker push ghcr.io/g0t4/upper:${{ github.ref_name }}
+      - run: docker tag upper ghcr.io/philenz/upper:latest
+      - run: docker tag upper ghcr.io/philenz/upper:${{ github.ref_name }}
+      - run: docker push ghcr.io/philenz/upper:latest
+      - run: docker push ghcr.io/philenz/upper:${{ github.ref_name }}
 
