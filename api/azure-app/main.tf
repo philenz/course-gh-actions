@@ -45,10 +45,10 @@ resource "azurerm_linux_web_app" "web-api" {
     always_on = false # must be false for F1 (free)
 
     # legacy app_service used linux_fx_version: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service#linux_fx_version
-    #   i.e. linux_fx_version = "DOCKER|weshigbee/actions-web-test:latest"
+    #   i.e. linux_fx_version = "DOCKER|philenz/actions-web-test:latest"
     #   use application_stack instead:
     application_stack {
-      docker_image_name   = "weshigbee/actions-web-test:latest"
+      docker_image_name   = "philenz/actions-web-test:latest"
       docker_registry_url = "https://index.docker.io" # azurerm UI marks this required (when not set), docs for linux_web_app terraform module say its optional ... w00t, setting this here makes the UI pick "Docker Hub" in azurerm AND now container is running!
     }
 
